@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration & Fees</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f8ff;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .total-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .total-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .total-amount {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .submit-btn, .clear-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .clear-btn {
+            background-color: #eb0f0f ;
+        }
+
+        .clear-btn:hover {
+            background-color:  #eb0f0f;
+        }
+
+        .invoice-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .invoice-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .invoice-container p {
+            font-size: 18px;
+        }
+
+        .back-btn {
+            background-color: #0909fa;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #ababad;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Course Registration</h1>
+
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="checkbox-group">
+            <label>Select Courses:</label>
+            <input type="checkbox" id="sewing" name="course" value="1500" onclick="updateTotal(this)">
+            <label for="sewing">Sewing - R1500</label><br>
+
+            <input type="checkbox" id="first-aid" name="course" value="1500" onclick="updateTotal(this)">
+            <label for="first-aid">First Aid - R1500</label><br>
+
+            <input type="checkbox" id="landscaping" name="course" value="1500" onclick="updateTotal(this)">
+            <label for="landscaping">Landscaping - R1500</label><br>
+
+            <input type="checkbox" id="life-skills" name="course" value="1500" onclick="updateTotal(this)">
+            <label for="life-skills">Life Skills - R1500</label><br>
+
+            <input type="checkbox" id="child-minding" name="course" value="750" onclick="updateTotal(this)">
+            <label for="child-minding">Child Minding - R750</label><br>
+
+            <input type="checkbox" id="cooking" name="course" value="750" onclick="updateTotal(this)">
+            <label for="cooking">Cooking - R750</label><br>
+
+            <input type="checkbox" id="garden-maintenance" name="course" value="750" onclick="updateTotal(this)">
+            <label for="garden-maintenance">Garden Maintenance - R750</label>
+        </div>
+
+        <div class="total-container">
+            <p>Subtotal: R<span id="subtotal">0</span></p>
+            <p>Discount: <span id="discount">0%</span></p>
+            <p>Total: R<span id="total">0</span></p>
+        </div>
+
+        <button type="submit" class="submit-btn">Books Courses</button>
+        <button type="button" class="clear-btn" onclick="clearForm()">Clear Form</button>
+    </form>
+
+    
+    <div class="invoice-container" id="invoiceContainer">
+        <h2>Your Invoice</h2>
+        <p><strong>Name:</strong> <span id="invoiceName"></span></p>
+        <p><strong>Phone Number:</strong> <span id="invoicePhone"></span></p>
+        <p><strong>Email Address:</strong> <span id="invoiceEmail"></span></p>
+        <p><strong>Courses Selected:</strong></p>
+        <ul id="selectedCoursesList"></ul>
+        <p><strong>Subtotal:</strong> R<span id="invoiceSubtotal"></span></p>
+        <p><strong>Discount:</strong> <span id="invoiceDiscount"></span>%</p>
+        <p><strong>Total Fees:</strong> R<span id="invoiceTotal"></span></p>
+    </div>
+
+    <br>
+    <a href="Home.html"><button class="back-btn">Back To Home Page</button></a>
+</div>
+
+<script>
+    let selectedCourses = [];
+    const selectedCoursesDetails = [];
+
+    function updateTotal(checkbox) {
+        const courseCost = parseInt(checkbox.value);
+        const courseName = checkbox.nextElementSibling.textContent;
+
+        if (checkbox.checked) {
+            selectedCourses.push(courseCost);
+            selectedCoursesDetails.push(courseName);
+        } else {
+            const index = selectedCourses.indexOf(courseCost);
+            if (index !== -1) {
+                selectedCourses.splice(index, 1);
+                selectedCoursesDetails.splice(index, 1);
+            }
+        }
+
+        const subtotal = selectedCourses.reduce((sum, cost) => sum + cost, 0);
+        const discountPercentage = getDiscount(selectedCourses.length);
+        const discountAmount = (subtotal * discountPercentage) / 100;
+        const total = subtotal - discountAmount;
+
+        document.getElementById('subtotal').textContent = subtotal;
+        document.getElementById('discount').textContent = discountPercentage + "%";
+        document.getElementById('total').textContent = total;
+    }
+       
+    function getDiscount(courseCount) {
+        if (courseCount === 1) {
+            return 0;
+        } else if (courseCount === 2) {
+            return 5;
+        } else if (courseCount === 3) {
+            return 10;
+        } else if (courseCount > 3) {
+            return 15;
+        }
+        return 0;
+    }
+
+   
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const subtotal = document.getElementById('subtotal').textContent;
+        const discount = document.getElementById('discount').textContent;
+        const total = document.getElementById('total').textContent;
+
+        
+        document.getElementById('invoiceName').textContent = name;
+        document.getElementById('invoicePhone').textContent = phone;
+        document.getElementById('invoiceEmail').textContent = email;
+        document.getElementById('invoiceSubtotal').textContent = subtotal;
+        document.getElementById('invoiceDiscount').textContent = discount;
+        document.getElementById('invoiceTotal').textContent = total;
+
+        
+        const selectedCoursesList = document.getElementById('selectedCoursesList');
+        selectedCoursesList.innerHTML = ''; 
+        selectedCoursesDetails.forEach(course => {
+            const li = document.createElement('li');
+            li.textContent = course;
+            selectedCoursesList.appendChild(li);
+        });
+
+       
+        document.getElementById('invoiceContainer').style.display = 'block';
+    });
+
+   
+    function clearForm() {
+        document.getElementById('registrationForm').reset();
+        document.getElementById('subtotal').textContent = '0';
+        document.getElementById('discount').textContent = '0%';
+        document.getElementById('total').textContent = '0';
+        selectedCourses = [];
+        selectedCoursesDetails.length = 0; 
+        document.getElementById('invoiceContainer').style.display = 'none'; 
+    }
+</script>
+</body>
+</html>
