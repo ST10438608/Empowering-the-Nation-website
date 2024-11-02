@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Contact Us</title>
 
     <style>
         body {
-    background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/Background.webp');
+    background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/websitebg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,28 +22,19 @@
 }
 
 h1 {
-    color: #87CEEB; 
+    color: #F0F0F0; 
     font-size: 2.5em;
     text-align: center;
     margin-top: 200px; 
+    margin-bottom: -50px;
 }
 
-.social-media {
-    text-align: center;
-    margin-top: 30px;
+h2 {
+    font-size: 1.8em;
+    margin-top: 50px;
+    
 }
 
-.social-media a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 1.5em;
-    color: #5b5e60;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #19191a;
-}
 
 .contact-details {
     margin-bottom: 20px;
@@ -67,6 +59,9 @@ h1 {
 
 .map-container {
     margin-left: 20px; 
+    margin-right: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 
@@ -74,6 +69,23 @@ h1 {
     flex: 1; 
     text-align: left;
 }
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 30px; 
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #333; 
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0072b1; 
+}
+
 
     </style>
 </head>
@@ -114,24 +126,37 @@ h1 {
         <div class="company-info">
             <div class="contact-details">
                 <p><strong>Company Name:</strong> Empowering the Nation</p>
-                <p><strong>Address:</strong> 123 Business Avenue, Johannesburg, South Africa</p>
-                <p><strong>Phone:</strong> 011-123-4567</p>
-                <p><strong>Email:</strong> info@empoweringthenation.co.za</p>
+                <p><strong>Address 1:</strong> 32 Avenue Street, Johannesburg, South Africa</p>
+                <p><strong>Address 2:</strong> 57 Winnie Mandela Drive, Johannesburg, South Africa</p>
+                <p><strong>Phone:</strong> 031-276-9349</p>
+                <p><strong>Email:</strong> empoweringourfuture@nation.co.za</p>
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
             </div>
-
-            <h2>Follow Us</h2>
-            <div class="social-media">
-                <a href="https://www.facebook.com" target="_blank">Facebook</a>
-                <a href="https://www.twitter.com" target="_blank">Twitter</a>
-                <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-            </div>
+            
         </div>
 
-        <!-- New Map Container -->
+        
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1065.593020349591!2d28.06216559695769!3d-26.059281225315406!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1730049356951!5m2!1sen!2sza" 
-                    width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="300" height="300" style="border: 3px solid #87CEEB; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1561.6366345798808!2d28.009105118794626!3d-26.020573925680093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957387a576ef71%3A0x64b932a9bccf9297!2sWinnie%20Mandela%20Dr!5e0!3m2!1sen!2sza!4v1730544157365!5m2!1sen!2sza" 
+                    width="300" height="300" style="border: 3px solid #87CEEB; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
         </div>
     </div>
 

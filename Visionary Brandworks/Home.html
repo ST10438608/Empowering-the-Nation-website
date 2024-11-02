@@ -9,7 +9,7 @@
     <style>
         
         body {
-            background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/Background.webp');
+            background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/websitebg2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -27,13 +27,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 150px auto 0; 
-            width: 1000px; 
+            margin: 100px auto 0; 
+            width: 1100px; 
             max-width: 1200px;
             background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/carouselbg.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            border: 3px solid #070036;
+            border-radius: 10px;
+
         }
 
         #slideshow {
@@ -84,24 +87,35 @@
 
         /* Scrolling text section */
 .event {
-    width: 100%; 
-    overflow: hidden; 
     position: relative; 
-    height: 535px; 
-    margin-top: 155px;
-    margin-bottom: 100px; 
-    background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/scrollingbg.jpg'); 
-    background-size: cover; 
+    width: 100%;
+    height: 550px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-image: url('C:/Users/rayan/Desktop/IMAD/Repos/Empowering-the-Nation-website/Visionary Brandworks/images/scrollingbg.jpg');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
-    padding: 0;
+    background-repeat: no-repeat;
+    border: 3px solid #070036;
+    border-radius: 10px;
+}
+
+.marquee-container {
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+}
+
+.marquee-container marquee {
+    display: block;
+    height: 400px;
+    padding-top: 20px; 
 }
 
 .event div {
     position: absolute;
     width: 100%;
     height: auto; 
-    
     top: 0;
 }
 
@@ -196,22 +210,27 @@
             </div>
         </div>
 
-        <!-- Scrolling Text Section -->
-        <div class="container">
-            <div class="main-section">
-                <div class="event">
-                    <div>
-                        <marquee direction="up" scrollamount="7" style="height:400px;">
-                            <ul>
-                                <li> Empowering the Nation is dedicated to providing essential skills training for domestic workers and gardeners.</li>
-                                <li> Our mission is to equip individuals with valuable expertise, enhancing their employability and fostering entrepreneurship.</li>
-                                <li> By offering life-changing opportunities, we aim to uplift communities and create pathways to economic independence.</li>
-                            </ul>
-                        </marquee>
-                    </div>
-                </div>
+       <!-- Scrolling Text Section -->
+<div class="container">
+    <div class="main-section">
+        <div class="event">
+            <div class="marquee-container">
+                <marquee direction="up" scrollamount="7" style="height:400px;">
+                    <ul>
+                        <li>Empowering the Nation is dedicated to providing essential skills training for domestic workers and gardeners.</li>
+                        <li>Our mission is to equip individuals with valuable expertise, enhancing their employability and fostering entrepreneurship.</li>
+                        <li>By offering life-changing opportunities, we aim to uplift communities and create pathways to economic independence.</li>
+                        <li>Our six-month courses at Empowering the Nation provide in-depth training in First Aid, Sewing, Landscaping, and Life Skills.</li>
+                        <li>In six months, participants gain practical experience and develop the confidence needed to excel in their chosen fields.</li>
+                        <li>Our Six-Week Courses, including Child Minding, Cooking, and Garden Maintenance, offer fast, practical training to quickly gain new skills.</li>
+                        <li>These short courses empower participants with essential knowledge, opening doors to job opportunities and personal growth.</li>
+                    </ul>
+                </marquee>
             </div>
         </div>
+    </div>
+</div>
+
 
         <br><br>
 
