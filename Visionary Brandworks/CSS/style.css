@@ -277,7 +277,7 @@ nav {
   }
 }
 
-/* Styles for larger screens (desktops, laptops) */
+/* Styles for larger screens */
 @media (min-width: 768px) {
   body {
       font-size: 18px;
@@ -297,7 +297,7 @@ nav {
   }
 }
 
-/* Styles for smaller screens (tablets, mobiles) */
+/* Styles for smaller screens */
 @media (max-width: 767px) {
   body {
       font-size: 16px;
